@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Bug extends Agent {
-    static double V0 = 0.2;
+    static double V0 = 1.0;
 
     public Bug(Playfield playfield) {
 	super(playfield);
@@ -20,12 +20,12 @@ public class Bug extends Agent {
 	y = prng.nextDouble();
 	t = Math.PI * nextSignedDouble();
 	v = prng.nextDouble() * V0;
-	vt = Math.PI * nextSignedDouble() * V0 * dt;
+	vt = Math.PI * nextSignedDouble() * V0;
 	a = 0;
-	AMIN = -0.5 * dt;
-	AMAX = 2.0 * dt;
-	VTMIN = - 2.0 * Math.PI * dt;
-	VTMAX = 2.0 * Math.PI * dt;
+	AMIN = -0.5;
+	AMAX = 2.0;
+	VTMIN = - 2.0 * Math.PI;
+	VTMAX = 2.0 * Math.PI;
 	CDRAG = 100.0;
 	ai = new BugAI();
     }
