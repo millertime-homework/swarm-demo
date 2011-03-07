@@ -18,12 +18,13 @@ public class BugAI extends AI {
     public void control(MeView me, AgentView[] agents, ThingView[] things) {
 	if (things != null)
 	    throw new Error("internal error: no things yet");
-	me.a = 0;
-	dest = Math.tan(Math.abs(.5-y),Math.abs(.5-x));
-	if (dest > me.vt)
-	    me.vt -= .5;
-	else
-	    me.vt += .5;
+	System.out.println(me.a);
+	me.a = 5;
+	double dest = Math.atan(.5-me.y /.5-me.x);
+	if (dest > me.t) 
+	    me.vt -= .3;
+	else if (dest < me.t)
+	    me.vt += .3;
 	//me.vt += Math.PI * nextSignedDouble() * dt;
     }
 }
